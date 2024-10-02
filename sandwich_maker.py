@@ -14,7 +14,9 @@ class SandwichMaker:
 
     def make_sandwich(self, sandwich_size, order_ingredients):
         ########Deduct the required ingredients from the resources.
-        ## transaction_result function
-        for ingredient, amount in order_ingredients.items():
-            self.machine_resources[ingredient] -= amount
-        print(f"{sandwich_size.capitalize()} sandwich is ready. Bon appetit!")
+        if self.check_resources(order_ingredients):
+            for ingredient, amount in order_ingredients.items():
+                self.machine_resources[ingredient] -= amount
+            print(f"{sandwich_size.capitalize()} sandwich is ready. Bon appétit!")
+            return True
+        return False

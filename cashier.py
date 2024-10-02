@@ -19,4 +19,3 @@ class Cashier:
            Hint: use the output of process_coins() function for cost input"""
         ## transaction_result function
         return coins >= cost
-

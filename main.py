@@ -13,12 +13,15 @@ sandwich_maker_instance = sandwich_maker.SandwichMaker(resources)
 cashier_instance = cashier.Cashier()
 
 
-
-
 def main():
     ###  write the rest of the codes ###
     print("Welcome to the Sandwich Maker!")
     sandwich_size = input("Please choose a sandwich size (small, medium, large): ").lower()
+
+    if sandwich_size not in recipes:
+        print("Invalid sandwich size. Please try again.")
+        return
+
     order_ingredients = recipes[sandwich_size]["ingredients"]
     cost = recipes[sandwich_size]["cost"]
 
